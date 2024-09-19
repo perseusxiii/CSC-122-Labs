@@ -1,0 +1,25 @@
+// File: QuartsToGallons.java
+// Purpose: Compute and display the number of gallons and quarts needed for a painting job
+
+package quartstogallons;
+
+public class QuartsToGallons {
+
+    public static void main(String[] args) {
+        // Declare a named constant to hold the number of quarts in a gallon
+        final int QUARTS_IN_GALLON = 4;
+
+        // Declare a variable for the number of quarts needed for the job
+        int quartsNeeded = 18;
+
+        // Compute the number of gallons needed
+        int gallonsNeeded = quartsNeeded / QUARTS_IN_GALLON;
+
+        // Compute the remaining quarts after using the gallons
+        int remainingQuarts = quartsNeeded % QUARTS_IN_GALLON;
+
+        // Display the result
+        System.out.println("A job that needs " + quartsNeeded + " quarts requires " 
+                            + gallonsNeeded + " gallons plus " + remainingQuarts + " quarts.");
+    }
+}
