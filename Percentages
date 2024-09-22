@@ -1,0 +1,33 @@
+
+
+import java.util.Scanner;
+
+public class Percentages {
+    
+    public static void main(String[] args) {
+        // Creates Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompts user for two double values
+        System.out.print("Enter the first number: ");
+        double firstNumber = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double secondNumber = scanner.nextDouble();
+
+        // Calls computePercent method with original order
+        computePercent(firstNumber, secondNumber);
+
+        // Calls computePercent method with reversed order
+        computePercent(secondNumber, firstNumber);
+    }
+
+    // Method to compute and display the percentages
+    public static void computePercent(double value1, double value2) {
+        // Calculates percentage
+        double percentage = (value1 / value2) * 100;
+
+        // Display the result 
+        System.out.println(value1 + " is " + percentage + " percent of " + value2);
+    }
+}
