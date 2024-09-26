@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class MinutesConversion {
+
+    public static void main(String[] args) {
+        // Create Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the number of minutes
+        System.out.print("Enter the number of minutes: ");
+        int minutes = scanner.nextInt();
+
+        // Call the method to convert minutes to hours and days
+        convertMinutes(minutes);
+    }
+
+    // Method to perform the conversion and display the result
+    public static void convertMinutes(int minutes) {
+        // Convert minutes to hours (1 hour = 60 minutes)
+        double hours = minutes / 60.0;
+
+        // Convert minutes to days (1 day = 24 hours, or 1 day = 1440 minutes)
+        double days = minutes / 1440.0;
+
+        // Display the result
+        System.out.println(minutes + " minutes equals " + hours + " hours.");
+        System.out.println(minutes + " minutes equals " + days + " days.");
+    }
+}
