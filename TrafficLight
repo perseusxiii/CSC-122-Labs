@@ -1,0 +1,64 @@
+public class TrafficLight {
+
+    // Attributes for color and duration of the traffic light
+    public String color;
+    public int duration; // duration in seconds
+
+    // Constructor for TrafficLight class
+    public TrafficLight(String color, int duration) {
+        this.color = color;
+        this.duration = duration;
+    }
+
+    // Method to change the color of the traffic light
+    public void changeColor(String newColor) {
+        this.color = newColor;
+    }
+
+    // Method to check if the light is red
+    public boolean isRed() {
+        return this.color.equals("red");
+    }
+
+    // Method to check if the light is green
+    public boolean isGreen() {
+        return this.color.equals("green");
+    }
+
+    // Method to get the duration of the light
+    public int getDuration() {
+        return this.duration;
+    }
+
+    // Method to set the duration of the light
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        // Creates new TrafficLight object with initial color "red" and duration 30 seconds
+        TrafficLight light = new TrafficLight("red", 30);
+
+        // Check and print if the light is red
+        System.out.println("The light is red: " + light.isRed());
+
+        // Check and print if the light is green
+        System.out.println("The light is green: " + light.isGreen());
+
+        // Change the light color to "green"
+        light.changeColor("green");
+
+        // Check and print if the light is now green
+        System.out.println("The light is now green: " + light.isGreen());
+
+        // Print the current duration of the light
+        System.out.println("The light duration is: " + light.getDuration());
+
+        // Change the duration of the light to 20 seconds
+        light.setDuration(20);
+
+        // Print the updated duration of the light
+        System.out.println("The light duration is now: " + light.getDuration());
+    }
+}
