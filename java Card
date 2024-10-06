@@ -1,0 +1,40 @@
+public class Card {
+    private char suit;
+    private int value;
+
+    // Constructor that sets the suit and value
+    public Card(char suit, int value) {
+        this.suit = suit;
+        setValue(value); // Ensure value is within range on creation
+    }
+
+    // Method to set the value of the card
+    public void setValue(int newValue) {
+        if (newValue >= 1 && newValue <= 13) {
+            this.value = newValue;
+        } else {
+            this.value = 1; // Set to 1 if out of range
+        }
+    }
+
+    // Method to get the suit of the card
+    // (s for spades, h for hearts, d for diamonds, or c for clubs)
+    public char getSuit() {
+        return suit;
+    }
+
+    // Method to get the value of the card
+    public int getValue() {
+        return value;
+    }
+
+    public static void main(String[] args) {
+        // Creates a Valid Card object
+        Card card1 = new Card('h', 5);  // Hearts, 5
+        System.out.println("Card 1: Suit = " + card1.getSuit() + ", Value = " + card1.getValue());
+
+        // Creates a Card object with an invalid value
+        Card card2 = new Card('s', 20);  // Spades, value > 13, should set to 1
+        System.out.println("Card 2: Suit = " + card2.getSuit() + ", Value = " + card2.getValue());
+    }
+}
