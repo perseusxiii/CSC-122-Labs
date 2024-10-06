@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class SortNumbers {
+
+    public static void main(String[] args) {
+        // Create scanner object for user input
+        Scanner scan = new Scanner(System.in);
+
+        // Ask user to enter 3 integers
+        System.out.println("Enter 3 integers:");
+
+        // Read integers from input
+        int num1 = scan.nextInt();
+        int num2 = scan.nextInt();
+        int num3 = scan.nextInt();
+
+        int temp; // Temporary variable for swapping
+
+        // Sort numbers in ascending order
+        if (num1 > num2) {
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        if (num1 > num3) {
+            temp = num1;
+            num1 = num3;
+            num3 = temp;
+        }
+        if (num2 > num3) {
+            temp = num2;
+            num2 = num3;
+            num3 = temp;
+        }
+
+        // Display numbers in ascending order
+        System.out.println("Numbers in ascending order: ");
+        System.out.println(num1 + " " + num2 + " " + num3);
+
+        // Display numbers in descending order
+        System.out.println("Numbers in descending order: ");
+        System.out.println(num3 + " " + num2 + " " + num1);
+
+    }
+}
