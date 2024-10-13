@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class CarCareChoice {
+
+    public static void main(String[] args) {
+        // Create Scanner object to read input from keyboard
+        Scanner scan = new Scanner(System.in);
+
+        // Display available services and prices
+        System.out.println("Welcome to Chapa's Car Care Shop!");
+        System.out.println("Available services:");
+        System.out.println("1. Oil change");
+        System.out.println("2. Tire rotation");
+        System.out.println("3. Battery check");
+        System.out.println("4. Brake inspection");
+
+        // Ask user to enter their choice
+        System.out.println("Enter the service you want (name or number): ");
+        String service = scan.nextLine().toLowerCase();  // Convert input to lowercase for consistency
+
+        // Display price for service chosen
+        switch (service) {
+            // Check for service names
+            case "oil change":
+            case "1":
+                System.out.println("The price for Oil change is $25.");
+                break;
+            case "tire rotation":
+            case "2":
+                System.out.println("The price for Tire rotation is $22.");
+                break;
+            case "battery check":
+            case "3":
+                System.out.println("The price for Battery check is $15.");
+                break;
+            case "brake inspection":
+            case "4":
+                System.out.println("The price for Brake inspection is $5.");
+                break;
+            default:
+                // Display error message if service entered is invalid
+                System.out.println("Error: Invalid service selected.");
+                break;
+        }
+    }
+}
