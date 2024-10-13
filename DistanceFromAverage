@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class DistanceFromAverage {
+    public static void main(String[] args) {
+        // Create Scanner object to read user input
+        Scanner input = new Scanner(System.in);
+
+        int count = 0; // Keeps track of how many numbers have been entered
+        double total = 0; // Sum of all numbers entered
+        double average = 0; // Average of all numbers entered
+        final double QUIT = 99999; // Sentinel value to quit entering numbers
+        double lastValue; // Stores the last entered value for distance calculation
+
+        System.out.println("Enter up to 15 double values (enter 99999 to quit):");
+
+        // Loop to collect numbers, calculate total, and count how many were entered
+        while (count < 15) {
+            System.out.print("Enter a value: ");
+            double value = input.nextDouble();
+
+            // Check if the user entered the sentinel value (99999)
+            if (value == QUIT) {
+                break; // Exit the loop if the user wants to quit
+            }
+
+            // Update the total sum and increment the count
+            total += value;
+            count++;
+
+            // Save the last entered value for future distance calculations
+            lastValue = value;
+
+            // Calculate and display the average and distance from average immediately
+            if (count > 0) {
+                average = total / count;
+                double distanceFromAverage = Math.abs(lastValue - average);
+                System.out.println("Value: " + lastValue + ", Distance from average: " + distanceFromAverage);
+            }
+        }
+
+        // Error message if no numbers were entered
+        if (count == 0) {
+            System.out.println("Error: No numbers were entered.");
+        } else {
+            // Output final average and count of numbers entered
+            System.out.println("\nYou entered " + count + " numbers.");
+            System.out.println("The arithmetic average is: " + average);
+        }
+    }
+}
