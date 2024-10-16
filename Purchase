@@ -1,0 +1,56 @@
+public class Purchase {
+
+    // Instance variables
+    private int invoiceNumber;
+    private double saleAmount;
+    private double salesTax;
+
+    // Constant for sales tax rate of 5%
+    private static final double TAX_RATE = 0.05;
+
+    // Constructor to initialize variables
+    public Purchase(int invoiceNumber, double saleAmount) {
+        setInvoiceNumber(invoiceNumber);
+        setSaleAmount(saleAmount);  // This will also calculate sales tax
+    }
+
+    // Method to set invoice number
+    public void setInvoiceNumber(int invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+    }
+
+    // Method to get invoice number
+    public int getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    // Setter for sale amount (includes calculation of sales tax)
+    public void setSaleAmount(double saleAmount) {
+        this.saleAmount = saleAmount;
+        this.salesTax = saleAmount * TAX_RATE;  // Calculates sales tax at 5%
+    }
+
+    // Getter for sale amount
+    public double getSaleAmount() {
+        return saleAmount;
+}
+
+    // Getter for sales tax
+    public double getSalesTax() {
+        return salesTax;
+    }
+
+    // Method to Display Purchase Details 
+    public void display() {
+        System.out.println("Invoice Number: " + invoiceNumber);
+        System.out.println("Sale Amount: $" + saleAmount);  
+        System.out.println("Sales Tax (5%): $" + salesTax); 
+        System.out.println("Total Amount: $" + (saleAmount + salesTax));  
+}
+
+    // Main method for testing
+    public static void main(String[] args) {
+        Purchase purchase = new Purchase(1234, 100.00);  // Create new Purchase object
+        purchase.display();  // Display purchase details
+    }
+}
