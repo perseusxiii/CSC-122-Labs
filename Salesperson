@@ -1,0 +1,38 @@
+package SalespersonSort; 
+
+// Blueprint for Salesperson object
+public class Salesperson {
+    private int id; // ID number of salesperson
+    private double salesValue; // Salesperson's sales amount
+
+    // Constructor to initialize values of attributes
+    public Salesperson(int id, double salesValue) {
+        this.id = id;
+        this.salesValue = salesValue;
+    }
+
+    // Accessor for ID number
+    public int getId() {
+        return id;
+    }
+
+    // Mutator for ID number
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // Accessor for salesValue
+    public double getSalesValue() {
+        return salesValue;
+    }
+
+    // Mutator for salesValue
+    public void setSalesValue(double salesValue) {
+        this.salesValue = salesValue;
+    }
+
+    // toString method to return a string representation of Salesperson object
+    public String toString() {
+        return "Salesperson ID: " + id + ", sales amount: " + salesValue;
+    }
+}
