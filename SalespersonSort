@@ -1,0 +1,133 @@
+package SalespersonSort;
+
+import java.util.Scanner;
+
+public class SalespersonSort { // Blueprint for sorting objects
+
+    public static void main(String[] args) {
+
+        int id; // Defining an integer variable for ID
+        double sales; // Defining a double variable for sales
+
+        Salesperson[] array = new Salesperson[7]; // Creates array to hold Salesperson objects
+
+        Scanner scan = new Scanner(System.in); // Creates Scanner object for input
+
+        // Enter values for each Salesperson object
+
+        // First Salesperson
+        System.out.print("Enter ID number 1: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 1: ");
+        sales = scan.nextDouble();
+        array[0] = new Salesperson(id, sales);
+
+        // Second Salesperson
+        System.out.print("Enter ID number 2: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 2: ");
+        sales = scan.nextDouble();
+        array[1] = new Salesperson(id, sales);
+
+        // Third Salesperson
+        System.out.print("Enter ID number 3: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 3: ");
+        sales = scan.nextDouble();
+        array[2] = new Salesperson(id, sales);
+
+        // Fourth Salesperson
+        System.out.print("Enter ID number 4: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 4: ");
+        sales = scan.nextDouble();
+        array[3] = new Salesperson(id, sales);
+
+        // Fifth Salesperson
+        System.out.print("Enter ID number 5: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 5: ");
+        sales = scan.nextDouble();
+        array[4] = new Salesperson(id, sales);
+
+        // Sixth Salesperson
+        System.out.print("Enter ID number 6: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 6: ");
+        sales = scan.nextDouble();
+        array[5] = new Salesperson(id, sales);
+
+        // Seventh Salesperson
+        System.out.print("Enter ID number 7: ");
+        id = scan.nextInt();
+        System.out.print("Enter Sales Amount 7: ");
+        sales = scan.nextDouble();
+        array[6] = new Salesperson(id, sales);
+
+        // Asks user how they want to sort the data
+        System.out.println("Do you want to sort by ID or sales? (Enter 'ID' or 'sales'): ");
+        String select = scan.next(); // Takes user's choice
+
+        // Sorts by ID
+        if (select.equalsIgnoreCase("ID")) {
+            int currentPosition = 0; // Initialize currentPosition to 0
+            while (currentPosition < array.length) { // Continue while currentPosition is less than 7
+                int minimumPosition = currentPosition; // Holds index of the minimum element
+                int comparePosition = currentPosition; // Initialize comparePosition to currentPosition
+
+                while (comparePosition < array.length) { // Continue while comparePosition is less than 7
+                    if (array[comparePosition].getId() < array[minimumPosition].getId()) { // Finds the minimum ID
+                        minimumPosition = comparePosition; // Updates index of the minimum value
+                    }
+                    comparePosition++; // Increment comparePosition
+                }
+
+                // Swaps elements to sort them
+                Salesperson temp = array[currentPosition]; // Temporary variable for swapping
+                array[currentPosition] = array[minimumPosition]; // Swaps values
+                array[minimumPosition] = temp; // Assigns back the swapped value
+
+                currentPosition++; // Increment currentPosition to move to the next element
+            }
+
+            // Print sorted data by ID
+            System.out.println("Sales sorted by ID: ");
+            int index = 0; // Initialize index for printing
+            while (index < array.length) { // Continue while index is less than the length of the array
+                System.out.println(array[index]); // Print each Salesperson's details
+                index++; // Increment index
+            }
+
+        } else if (select.equalsIgnoreCase("sales")) { // Else block for sorting by sales
+            int currentPosition = 0; // Initialize currentPosition to 0
+            while (currentPosition < array.length) { // Continue while currentPosition is less than the length of the array
+                int minimumPosition = currentPosition; // Holds the index of the minimum element
+                int comparePosition = currentPosition; // Initialize comparePosition to currentPosition
+
+                while (comparePosition < array.length) { // Continue while comparePosition is less than the length of the array
+                    if (array[comparePosition].getSalesValue() < array[minimumPosition].getSalesValue()) { // Finds the minimum sales value
+                        minimumPosition = comparePosition; // Updates the index of the minimum value
+                    }
+                    comparePosition++; // Increment comparePosition
+                }
+
+                // Swaps elements to sort them
+                Salesperson temp = array[currentPosition]; // Temporary variable for swapping
+                array[currentPosition] = array[minimumPosition]; // Swaps values
+                array[minimumPosition] = temp; // Assigns back the swapped value
+
+                currentPosition++; // Increment currentPosition to move to the next element
+            }
+
+            // Prints sorted data by sales amount
+            System.out.println("Sales sorted by Annual Sales: ");
+            int index = 0; // Initialize index for printing
+            while (index < array.length) { // Continue while index is less than the length of the array
+                System.out.println(array[index]); // Print each Salesperson's details
+                index++; // Increment index
+            }
+        } else {
+            System.out.println("Invalid input. Please enter either 'ID' or 'sales'.");
+        }
+    }
+}
