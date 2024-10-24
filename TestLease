@@ -1,0 +1,69 @@
+package Lease;
+
+import java.util.Scanner;
+
+public class TestLease {
+
+    // Method to prompt user for Lease values and return a new Lease object
+    public static Lease getData() {
+        Scanner input = new Scanner(System.in);
+
+        // Prompt user for tenant name, apartment number, rent amount, and lease term
+        System.out.print("Enter tenant name: ");
+        String tenantName = input.nextLine();
+
+        System.out.print("Enter apartment number: ");
+        int apartmentNumber = input.nextInt();
+
+        System.out.print("Enter monthly rent amount: ");
+        double monthlyRent = input.nextDouble();
+
+        System.out.print("Enter lease term (in months): ");
+        int leaseTerm = input.nextInt();
+
+        // Create and return a new Lease object with user input
+        Lease lease = new Lease();
+        lease.setTenantName(tenantName);
+        lease.setApartmentNumber(apartmentNumber);
+        lease.setMonthlyRent(monthlyRent);
+        lease.setLeaseTerm(leaseTerm);
+
+        return lease;
+    }
+
+    // Method to display Lease values
+    public static void showValues(Lease lease) {
+        System.out.println("Tenant Name: " + lease.getTenantName());
+        System.out.println("Apartment Number: " + lease.getApartmentNumber());
+        System.out.println("Monthly Rent: " + lease.getMonthlyRent());
+        System.out.println("Lease Term (in months): " + lease.getLeaseTerm());
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Create four Lease objects
+        Lease lease1, lease2, lease3, lease4;
+
+        // Uses getData() method to prompt user input for first 3 Lease objects
+        lease1 = getData();
+        lease2 = getData();
+        lease3 = getData();
+
+        // Assign default values to 4th Lease object
+        lease4 = new Lease();
+
+        // Display values of lease1 using showValues() method
+        showValues(lease1);
+
+        // Call addPetFee() method for lease1
+        lease1.addPetFee();
+
+        // Display values of lease1 again to confirm pet fee has been added
+        showValues(lease1);
+
+        // Display values of lease2, lease3, and lease4
+        showValues(lease2);
+        showValues(lease3);
+        showValues(lease4);
+    }
+}
