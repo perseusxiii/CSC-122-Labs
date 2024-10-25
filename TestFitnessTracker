@@ -1,0 +1,46 @@
+package FitnessTracker;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class TestFitnessTracker {
+    public static void main(String[] args) {
+        // Creates a Scanner for user input
+        Scanner input = new Scanner(System.in);
+
+        // Create the first object using the default constructor
+        FitnessTracker defaultTracker = new FitnessTracker();
+
+        // Prompt the user for activity details for the second object
+        System.out.print("Enter the name of the activity: ");
+        String activity = input.nextLine();
+
+        System.out.print("Enter the number of minutes spent: ");
+        int minutes = input.nextInt();
+
+        System.out.print("Enter the day of the activity (1-31): ");
+        int day = input.nextInt();        
+        
+        System.out.print("Enter the month of the activity (1-12): ");
+        int month = input.nextInt();
+        
+        System.out.print("Enter the year of the activity: ");
+        int year = input.nextInt();
+
+        // Create the second object using the overloaded constructor
+        FitnessTracker customTracker = new FitnessTracker(activity, minutes, LocalDate.of(year, month, day));
+
+        // Display values for both objects
+        System.out.println("\nDefault Tracker:");
+        System.out.println("Activity: " + defaultTracker.getActivity());
+        System.out.println("Minutes: " + defaultTracker.getMinutes());
+        System.out.println("Date: " + defaultTracker.getDate());
+
+        System.out.println("\nCustom Tracker:");
+        System.out.println("Activity: " + customTracker.getActivity());
+        System.out.println("Minutes: " + customTracker.getMinutes());
+        System.out.println("Date: " + customTracker.getDate());
+
+    }
+}
+
