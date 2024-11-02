@@ -1,0 +1,12 @@
+
+package Poem;
+
+public class Limerick extends Poem {
+    private static final int LINE_COUNT = 5;
+
+    // Constructor that only accepts the title and sets lines to 5
+    public Limerick(String title) {
+        super(title, LINE_COUNT);
+    }
+}
+
