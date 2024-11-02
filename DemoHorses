@@ -1,0 +1,45 @@
+
+package Horse;
+
+import java.util.Scanner;
+
+public class DemoHorses {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Create and set fields for a Horse object
+        Horse horse = new Horse(); // Creates new Horse object
+        System.out.println("Enter horse's name: ");
+        horse.setName(input.nextLine());
+        System.out.println("Enter horse's color: ");
+        horse.setColor(input.nextLine());
+        System.out.println("Enter horse's birth year: ");
+        horse.setBirthYear(input.nextInt());
+        input.nextLine(); // Clears leftover newline
+
+        // Display Horse object's information
+        System.out.println("\nHorse Information:");
+        System.out.println("Name: " + horse.getName());
+        System.out.println("Color: " + horse.getColor());
+        System.out.println("Birth Year: " + horse.getBirthYear());
+
+        // Create and set fields for a RaceHorse object
+        RaceHorse raceHorse = new RaceHorse(); // Creates new RaceHorse object
+        System.out.println("\nEnter race horse's name: ");
+        raceHorse.setName(input.nextLine());
+        System.out.println("Enter race horse's color: ");
+        raceHorse.setColor(input.nextLine());
+        System.out.println("Enter race horse's birth year: ");
+        raceHorse.setBirthYear(input.nextInt());
+        System.out.println("Enter number of races the horse has competed in: ");
+        raceHorse.setRaces(input.nextInt());
+
+        // Display RaceHorse object's information
+        System.out.println("\nRace Horse Information:");
+        System.out.println("Name: " + raceHorse.getName());
+        System.out.println("Color: " + raceHorse.getColor());
+        System.out.println("Birth Year: " + raceHorse.getBirthYear());
+        System.out.println("Number of Races: " + raceHorse.getRaces());
+
+    }
+}
