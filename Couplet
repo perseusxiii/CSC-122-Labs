@@ -1,0 +1,11 @@
+
+package Poem;
+
+public class Couplet extends Poem {
+    private static final int LINE_COUNT = 2;
+
+    // Constructor that only accepts the title and sets lines to 2
+    public Couplet(String title) {
+        super(title, LINE_COUNT);
+    }
+}
