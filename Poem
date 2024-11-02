@@ -1,0 +1,25 @@
+
+package Poem;
+
+public class Poem {
+    // Instance variables
+    private String title;
+    private int lines;
+
+    // Constructor that accepts both title and lines
+    public Poem(String title, int lines) {
+        this.title = title;
+        this.lines = lines;
+    }
+
+    // Get method for title
+    public String getTitle() {
+        return title;
+    }
+
+    // Get method for lines
+    public int getLines() {
+        return lines;
+    }
+}
+
