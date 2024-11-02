@@ -1,0 +1,34 @@
+
+package Horse;
+
+public class Horse {
+    // Instance variables
+    private String name;
+    private String color;
+    private int birthYear;
+
+    // Getter and setter methods for name
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter and setter methods for color
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // Getter and setter methods for birthYear
+    public int getBirthYear() {
+        return birthYear;
+    }
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+}
+
