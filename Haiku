@@ -1,0 +1,12 @@
+
+package Poem;
+
+public class Haiku extends Poem {
+    private static final int LINE_COUNT = 3;
+
+    // Constructor that only accepts the title and sets lines to 3
+    public Haiku(String title) {
+        super(title, LINE_COUNT);
+    }
+}
+
