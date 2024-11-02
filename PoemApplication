@@ -1,0 +1,53 @@
+package Poem;
+
+import java.util.Scanner;
+
+public class PoemApplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Poem poemVariable = null; // Object reference variable
+
+        // Prompt user for type of Poem
+        int choice = 0;
+        while (choice < 1 || choice > 4) {
+            System.out.println("Select the type of Poem to create:");
+            System.out.println("1 - Plain Poem");
+            System.out.println("2 - Couplet");
+            System.out.println("3 - Limerick");
+            System.out.println("4 - Haiku");
+            System.out.print("Enter your choice (1-4): ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // Clears leftover newline character
+            if (choice < 1 || choice > 4) {
+                System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+
+        // Prompt user for title
+        System.out.println("Enter the title of the poem: ");
+        String title = scanner.nextLine();
+
+        // Create Poem object with info input by user
+        switch (choice) {
+            case 1: // Plain Poem
+                System.out.println("Enter the number of lines: ");
+                int lines = scanner.nextInt();
+                poemVariable = new Poem(title, lines);
+                break;
+            case 2: // Couplet
+                poemVariable = new Couplet(title);
+                break;
+            case 3: // Limerick
+                poemVariable = new Limerick(title);
+                break;
+            case 4: // Haiku
+                poemVariable = new Haiku(title);
+                break;
+        }
+
+        // Display Poem details
+        System.out.println("\nPoem Details:");
+        System.out.println("Title: " + poemVariable.getTitle());
+        System.out.println("Number of lines: " + poemVariable.getLines());
+    }
+}
