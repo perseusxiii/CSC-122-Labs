@@ -1,0 +1,56 @@
+package Candle;
+
+import java.util.Scanner;
+
+public class DemoCandles {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create and initialize a Candle
+        Candle candle = new Candle();
+        System.out.println("Enter the color of the candle: ");
+        candle.setColor(scanner.nextLine());
+        System.out.println("Enter the height of the candle in inches: ");
+        candle.setHeight(scanner.nextInt());
+
+        // Create and initialize a ScentedCandle
+        ScentedCandle scentedCandle = new ScentedCandle();
+        scanner.nextLine(); // Clear the newline
+        System.out.println("Enter the color of the scented candle: ");
+        scentedCandle.setColor(scanner.nextLine());
+        System.out.println("Enter the height of the scented candle in inches: ");
+        scentedCandle.setHeight(scanner.nextInt());
+        scanner.nextLine(); // Clear the newline
+
+        // Offer the user four choices for scent
+        System.out.println("Choose a scent for the scented candle:");
+        System.out.println("1. Gardenia");
+        System.out.println("2. Lavender");
+        System.out.println("3. Vanilla");
+        System.out.println("4. Rose");
+        System.out.println("Enter your choice: ");
+        
+        int choice = scanner.nextInt();
+        String scentChoice;
+        switch (choice) {
+            case 1 -> scentChoice = "Gardenia";
+            case 2 -> scentChoice = "Lavender";
+            case 3 -> scentChoice = "Vanilla";
+            case 4 -> scentChoice = "Rose";
+            default -> scentChoice = "Unknown Scent";
+        }
+        scentedCandle.setScent(scentChoice);
+
+        // Display details
+        System.out.println("\nCandle Details:");
+        System.out.println("Color: " + candle.getColor());
+        System.out.println("Height: " + candle.getHeight() + " inches");
+        System.out.println("Price: $" + candle.getPrice());
+
+        System.out.println("\nScented Candle Details:");
+        System.out.println("Color: " + scentedCandle.getColor());
+        System.out.println("Height: " + scentedCandle.getHeight() + " inches");
+        System.out.println("Scent: " + scentedCandle.getScent());
+        System.out.println("Price: $" + scentedCandle.getPrice());
+    }
+}
