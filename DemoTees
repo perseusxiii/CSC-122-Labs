@@ -1,0 +1,72 @@
+
+package TeeShirt;
+
+import java.util.Scanner;
+
+public class DemoTees {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create two TeeShirt objects
+        TeeShirt shirt1 = new TeeShirt();
+        TeeShirt shirt2 = new TeeShirt();
+
+        // Prompt for shirt1 details
+        System.out.println("Enter order number for shirt 1:");
+        shirt1.setOrderNumber(scanner.nextInt());
+        System.out.println("Enter size for shirt 1:");
+        shirt1.setSize(scanner.next());
+        System.out.println("Enter color for shirt 1:");
+        shirt1.setColor(scanner.next());
+
+        // Prompt for shirt2 details
+        System.out.println("\nEnter order number for shirt 2:");
+        shirt2.setOrderNumber(scanner.nextInt());
+        System.out.println("Enter size for shirt 2:");
+        shirt2.setSize(scanner.next());
+        System.out.println("Enter color for shirt 2:");
+        shirt2.setColor(scanner.next());
+
+        // Display shirt details
+        System.out.println("\nTeeShirt 1 - Order Number: " + shirt1.getOrderNumber() +
+                ", Size: " + shirt1.getSize() + ", Color: " + shirt1.getColor() + ", Price: $" + shirt1.getPrice());
+        System.out.println("TeeShirt 2 - Order Number: " + shirt2.getOrderNumber() +
+                ", Size: " + shirt2.getSize() + ", Color: " + shirt2.getColor() + ", Price: $" + shirt2.getPrice());
+
+        // Create two CustomTee objects
+        CustomTee customShirt1 = new CustomTee();
+        CustomTee customShirt2 = new CustomTee();
+
+        // Prompt for customShirt1 details
+        System.out.println("\nEnter order number for custom shirt 1:");
+        customShirt1.setOrderNumber(scanner.nextInt());
+        System.out.println("Enter size for custom shirt 1:");
+        customShirt1.setSize(scanner.next());
+        System.out.println("Enter color for custom shirt 1:");
+        customShirt1.setColor(scanner.next());
+        System.out.println("Enter slogan for custom shirt 1:");
+        scanner.nextLine(); // Clear newline character
+        customShirt1.setSlogan(scanner.nextLine());
+
+        // Prompt for customShirt2 details
+        System.out.println("\nEnter order number for custom shirt 2:");
+        customShirt2.setOrderNumber(scanner.nextInt());
+        System.out.println("Enter size for custom shirt 2:");
+        customShirt2.setSize(scanner.next());
+        System.out.println("Enter color for custom shirt 2:");
+        customShirt2.setColor(scanner.next());
+        System.out.println("Enter slogan for custom shirt 2:");
+        scanner.nextLine(); // Clear newline character
+        customShirt2.setSlogan(scanner.nextLine());
+
+        // Display custom shirt details
+        System.out.println("\nCustom TeeShirt 1 - Order Number: " + customShirt1.getOrderNumber() +
+                ", Size: " + customShirt1.getSize() + ", Color: " + customShirt1.getColor() +
+                ", Price: $" + customShirt1.getPrice() + ", Slogan: \"" + customShirt1.getSlogan() + "\"");
+        System.out.println("Custom TeeShirt 2 - Order Number: " + customShirt2.getOrderNumber() +
+                ", Size: " + customShirt2.getSize() + ", Color: " + customShirt2.getColor() +
+                ", Price: $" + customShirt2.getPrice() + ", Slogan: \"" + customShirt2.getSlogan() + "\"");
+
+    }
+}
+
