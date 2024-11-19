@@ -1,0 +1,41 @@
+
+package Rock;
+
+/*
+Represents a rock sample cataloged by a natural history museum.
+Includes the sample number, weight in grams, and a description of the rock type.
+ */
+
+public class Rock {
+    // Instance variables
+    private int sampleNumber;     // Unique number of the rock sample
+    private double weightInGrams; // Weight of the rock in grams
+    protected String description;   // Description of the rock type. Allows access by subclasses.
+
+    /*
+    Constructor that initializes the sample number and weight.
+    The description is set to "Unclassified" by default.
+     */
+    
+    public Rock(int sampleNumber, double weightInGrams) {
+        this.sampleNumber = sampleNumber;
+        this.weightInGrams = weightInGrams;
+        this.description = "Unclassified";
+    }
+
+    // Returns the sample number of the rock.
+    public int getSampleNumber() {
+        return sampleNumber;
+    }
+
+    // Returns the weight of the rock in grams.
+    public double getWeightInGrams() {
+        return weightInGrams;
+    }
+
+    // Returns the description of the rock.
+    public String getDescription() {
+        return description;
+    }
+}
+
