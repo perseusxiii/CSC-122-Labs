@@ -1,0 +1,61 @@
+
+package Rock;
+
+import java.util.Scanner;
+
+/*
+DemoRocks is an application to demonstrate the functionality of the Rock class and its subclasses.
+It prompts the user to select a rock type and inputs the sample details.
+ */
+
+public class DemoRocks {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt for the type of rock
+        System.out.println("Enter the type of Rock collected:");
+        System.out.println("U: Unclassified, I: Igneous, S: Sedimentary, M: Metamorphic");
+        String rockType = scanner.nextLine().toUpperCase();
+
+        Rock rock;
+
+        if (rockType.equals("I") || rockType.equals("S") || rockType.equals("M")) {
+            // Valid rock type, prompt for details
+            System.out.println("Enter the sample number: ");
+            int sampleNumber = scanner.nextInt();
+
+            System.out.println("Enter the weight in grams: ");
+            double weightInGrams = scanner.nextDouble();
+
+            // Create the appropriate rock type
+            switch (rockType) {
+                case "I":
+                    rock = new IgneousRock(sampleNumber, weightInGrams);
+                    break;
+                case "S":
+                    rock = new SedimentaryRock(sampleNumber, weightInGrams);
+                    break;
+                case "M":
+                    rock = new MetamorphicRock(sampleNumber, weightInGrams);
+                    break;
+                default:
+                    rock = null; // This will never be reached due to the else condition
+            }
+        } else {
+            // Invalid input, create an unclassified rock
+            System.out.println("Invalid rock type entered. Creating an unclassified rock.");
+            rock = new Rock(0, 0);
+        }
+
+        // Display the details of the rock
+        displayRockDetails(rock);
+    }
+
+    // Displays the details of a Rock object.
+    public static void displayRockDetails(Rock rock) {
+        System.out.println("\nRock Details:");
+        System.out.println("Sample Number: " + rock.getSampleNumber());
+        System.out.println("Weight (grams): " + rock.getWeightInGrams());
+        System.out.println("Description: " + rock.getDescription());
+    }
+}
