@@ -1,0 +1,20 @@
+
+package Rock;
+
+// Represents an Igneous Rock, a type of rock formed from cooled and solidified magma or lava.
+
+public class IgneousRock extends Rock {
+
+    /*
+     Constructor initializes the sample number and weight.
+     Sets the description to a brief summary of Igneous Rock.
+     
+     sampleNumber The unique number of the rock sample.
+     weightInGrams The weight of the rock sample in grams.
+     */
+    
+    public IgneousRock(int sampleNumber, double weightInGrams) {
+        super(sampleNumber, weightInGrams);
+        super.description = "Igneous rocks are formed through the cooling and solidification of magma or lava.";
+    }
+}
