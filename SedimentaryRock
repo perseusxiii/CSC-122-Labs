@@ -1,0 +1,20 @@
+
+package Rock;
+
+// Represents a Sedimentary Rock, a type of rock formed by the accumulation of sediments.
+ 
+public class SedimentaryRock extends Rock {
+
+    /*
+      Constructor initializes the sample number and weight.
+      Sets the description to a brief summary of Sedimentary Rock.
+     
+      sampleNumber The unique number of the rock sample.
+      weightInGrams The weight of the rock sample in grams.
+     */
+    
+    public SedimentaryRock(int sampleNumber, double weightInGrams) {
+        super(sampleNumber, weightInGrams);
+        super.description = "Sedimentary rocks are formed by the accumulation and compression of mineral and organic particles.";
+    }
+}
